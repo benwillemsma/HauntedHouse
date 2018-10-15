@@ -179,13 +179,13 @@ public class GameManager : MonoBehaviour
             m_paused = false;
             ToggleCursor(true);
             Time.timeScale = 1;
-            if (Player.Instance) Destroy(Player.Instance.gameObject);
+            if (PlayerData.Instance) Destroy(PlayerData.Instance.gameObject);
         }
 
         // Base Play Scene 
         else if (scene.name == m_playScene)
         {
-            if (!Player.Instance) SpawnPlayer();
+            if (!PlayerData.Instance) SpawnPlayer();
             ToggleCursor(false);
         }
 

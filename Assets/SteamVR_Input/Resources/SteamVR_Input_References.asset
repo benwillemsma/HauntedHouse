@@ -13,41 +13,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionSetNames:
   - _default
-  - platformer
-  - buggy
   actionSetObjects:
   - {fileID: 11400000, guid: 06342da9e0cf0744f90d9fda1fc34847, type: 2}
-  - {fileID: 11400000, guid: 36a58a0aa2c023849a32c3b432b314d0, type: 2}
-  - {fileID: 11400000, guid: 97bec3435c516c14687a7f1e7af50d70, type: 2}
   actionNames:
   - __actions_default_in_InteractUI
   - __actions_default_in_Teleport
-  - __actions_default_in_GrabPinch
-  - __actions_default_in_GrabGrip
+  - __actions_default_in_Grab
   - __actions_default_in_Pose
-  - __actions_default_in_SkeletonLeftHand
-  - __actions_default_in_SkeletonRightHand
   - __actions_default_in_Squeeze
   - __actions_default_out_Haptic
-  - __actions_platformer_in_Move
-  - __actions_platformer_in_Jump
-  - __actions_buggy_in_Steering
-  - __actions_buggy_in_Throttle
-  - __actions_buggy_in_Brake
-  - __actions_buggy_in_Reset
   actionObjects:
   - {fileID: 11400000, guid: 91ed499ed9967944eaf165b0af2960ed, type: 2}
   - {fileID: 11400000, guid: e0da30eb738fcad43b518c25c63bc1dc, type: 2}
-  - {fileID: 11400000, guid: 3a0114b363e66d849ad65827f42b763d, type: 2}
-  - {fileID: 11400000, guid: 7ad612a739535d149aa73bb064065216, type: 2}
+  - {fileID: 11400000, guid: 283f1cb3aa4b88f4390ad17ee211201f, type: 2}
   - {fileID: 11400000, guid: 57fffd65b42559849beba1d9b1396396, type: 2}
-  - {fileID: 11400000, guid: a5b01d7d089dd674c84e7a187fcfa68a, type: 2}
-  - {fileID: 11400000, guid: 8b150d6d84af6dd4e8fbbaae9c2e323f, type: 2}
   - {fileID: 11400000, guid: 95de4db269f25dd4fab533edf273e159, type: 2}
   - {fileID: 11400000, guid: 4555fc10b7784524cb02305893f788f5, type: 2}
-  - {fileID: 11400000, guid: 36a3c23fa9e57df41965d24c1d0fef21, type: 2}
-  - {fileID: 11400000, guid: 0b03ec74eec9ca044873d33e48814f14, type: 2}
-  - {fileID: 11400000, guid: 65eb4bab24fd17445894fac65d795cf3, type: 2}
-  - {fileID: 11400000, guid: 5020e7597e2106840b3b0834e554f5aa, type: 2}
-  - {fileID: 11400000, guid: 65fa720fc1cc9804aafc6ff8ccf3ec7f, type: 2}
-  - {fileID: 11400000, guid: 478b152d9c2c7224dae055cd01fc83b2, type: 2}

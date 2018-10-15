@@ -9,22 +9,12 @@
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/GrabPinch",
+      "name": "/actions/default/in/Grab",
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/GrabGrip",
-      "type": "boolean"
-    },
-    {
-      "name": "/actions/default/in/RightHand",
-      "type": "pose",
-      "requirement": "mandatory"
-    },
-    {
-      "name": "/actions/default/in/LeftHand",
-      "type": "pose",
-      "requirement": "mandatory"
+      "name": "/actions/default/in/Pose",
+      "type": "pose"
     },
     {
       "name": "/actions/default/in/Squeeze",
@@ -77,9 +67,7 @@
       "/actions/buggybuddy/in/Reset": "Reset",
       "/actions/platformer/in/Move": "Move",
       "/actions/platformer/in/Jump": "Jump",
-      "/actions/default/in/RightHand": "RightHand",
-      "/actions/default/in/LeftHand": "LeftHand",
-      "/actions/default/in/Squeeze": "Squeeze"
+      "/actions/default/in/Grab": "Grab"
     }
   ]
 }

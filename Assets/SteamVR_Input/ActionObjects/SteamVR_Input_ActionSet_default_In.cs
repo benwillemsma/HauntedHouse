@@ -21,13 +21,9 @@ namespace Valve.VR
         
         public Valve.VR.SteamVR_Action_Boolean Teleport;
         
-        public Valve.VR.SteamVR_Action_Boolean GrabPinch;
+        public Valve.VR.SteamVR_Action_Boolean Grab;
         
-        public Valve.VR.SteamVR_Action_Boolean GrabGrip;
-        
-        public Valve.VR.SteamVR_Action_Pose RightHand;
-        
-        public Valve.VR.SteamVR_Action_Pose LeftHand;
+        public Valve.VR.SteamVR_Action_Pose Pose;
         
         public Valve.VR.SteamVR_Action_Single Squeeze;
     }

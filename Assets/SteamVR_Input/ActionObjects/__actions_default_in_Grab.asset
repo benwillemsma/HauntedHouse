@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c3d755cf6cc936488afcb037b69341e, type: 3}
-  m_Name: __actions_buggy_in_Brake
+  m_Name: __actions_default_in_Grab
   m_EditorClassIdentifier: 
   changeTolerance: 0.000001
-  fullPath: /actions/buggy/in/Brake
-  actionSet: {fileID: 11400000, guid: 97bec3435c516c14687a7f1e7af50d70, type: 2}
+  fullPath: /actions/default/in/Grab
+  actionSet: {fileID: 11400000, guid: 06342da9e0cf0744f90d9fda1fc34847, type: 2}
   direction: 0

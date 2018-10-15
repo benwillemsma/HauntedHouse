@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        float multiplier = Time.deltaTime * Player.Instance.CameraSensitivity * (inverted ? 1 : -1);
+        float multiplier = Time.deltaTime * PlayerData.Instance.CameraSensitivity * (inverted ? 1 : -1);
         transform.Rotate(transform.right, Input.GetAxis("Mouse Y") * multiplier, Space.World);
     }
 }

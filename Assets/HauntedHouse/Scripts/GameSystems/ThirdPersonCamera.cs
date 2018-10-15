@@ -14,13 +14,13 @@ public class ThirdPersonCamera : MonoBehaviour
     private float aimOffset;
     private float rotationOffset;
 
-    private Player player;
+    private PlayerData player;
     private float desiredZoom = 2;
     private float zoom = 2;
 
     void Awake ()
     {
-        player = Player.Instance;
+        player = PlayerData.Instance;
 
         Instance = this;
         if (!cameraRotator)

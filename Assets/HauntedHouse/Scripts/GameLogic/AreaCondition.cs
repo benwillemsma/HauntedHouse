@@ -20,11 +20,11 @@ public class AreaCondition : Condition
         triggerArea.isTrigger = true;
     }
 
-    public override void InitCondition() { if(checkObject || (UsePlayer && Player.Instance)) initialized = true; }
+    public override void InitCondition() { if(checkObject || (UsePlayer && PlayerData.Instance)) initialized = true; }
     public override bool CheckCondition()
     {
-        if (UsePlayer && Player.Instance)
-            checkObject = Player.Instance.gameObject;
+        if (UsePlayer && PlayerData.Instance)
+            checkObject = PlayerData.Instance.gameObject;
 
         if (checkObject)
             for (int i = 0; i < bodies.Count; i++)

@@ -34,4 +34,9 @@ public class InputCondition : Condition
         else return false;
     }
     public override void ResetCondition() { conditionIsMet = false; }
+
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 }
