@@ -14,13 +14,19 @@ MonoBehaviour:
   actionSet: {fileID: 0}
   listDirection: 0
   actions:
+  - {fileID: 11400000, guid: e8b8b890cd0e1194d8df33b32f6e3925, type: 2}
+  - {fileID: 11400000, guid: deeb3988edae0e243b3aa1e12181e42c, type: 2}
   - {fileID: 11400000, guid: 91ed499ed9967944eaf165b0af2960ed, type: 2}
-  - {fileID: 11400000, guid: e0da30eb738fcad43b518c25c63bc1dc, type: 2}
-  - {fileID: 11400000, guid: 283f1cb3aa4b88f4390ad17ee211201f, type: 2}
   - {fileID: 11400000, guid: 57fffd65b42559849beba1d9b1396396, type: 2}
+  - {fileID: 11400000, guid: 400f87590d9f2db409fd28fb6a42848e, type: 2}
+  - {fileID: 11400000, guid: 71c66f6884996b04e8ef0a763488b31a, type: 2}
   - {fileID: 11400000, guid: 95de4db269f25dd4fab533edf273e159, type: 2}
+  - {fileID: 11400000, guid: e0da30eb738fcad43b518c25c63bc1dc, type: 2}
+  GrabPinch: {fileID: 11400000, guid: e8b8b890cd0e1194d8df33b32f6e3925, type: 2}
+  GrabGrip: {fileID: 11400000, guid: deeb3988edae0e243b3aa1e12181e42c, type: 2}
   InteractUI: {fileID: 11400000, guid: 91ed499ed9967944eaf165b0af2960ed, type: 2}
-  Teleport: {fileID: 11400000, guid: e0da30eb738fcad43b518c25c63bc1dc, type: 2}
-  Grab: {fileID: 11400000, guid: 283f1cb3aa4b88f4390ad17ee211201f, type: 2}
   Pose: {fileID: 11400000, guid: 57fffd65b42559849beba1d9b1396396, type: 2}
+  Move: {fileID: 11400000, guid: 400f87590d9f2db409fd28fb6a42848e, type: 2}
+  Use: {fileID: 11400000, guid: 71c66f6884996b04e8ef0a763488b31a, type: 2}
   Squeeze: {fileID: 11400000, guid: 95de4db269f25dd4fab533edf273e159, type: 2}
+  Teleport: {fileID: 11400000, guid: e0da30eb738fcad43b518c25c63bc1dc, type: 2}

@@ -17,14 +17,20 @@ namespace Valve.VR
     public class SteamVR_Input_ActionSet_default_In : Valve.VR.SteamVR_Action_List
     {
         
+        public Valve.VR.SteamVR_Action_Boolean GrabPinch;
+        
+        public Valve.VR.SteamVR_Action_Boolean GrabGrip;
+        
         public Valve.VR.SteamVR_Action_Boolean InteractUI;
-        
-        public Valve.VR.SteamVR_Action_Boolean Teleport;
-        
-        public Valve.VR.SteamVR_Action_Boolean Grab;
         
         public Valve.VR.SteamVR_Action_Pose Pose;
         
-        public Valve.VR.SteamVR_Action_Single Squeeze;
+        public Valve.VR.SteamVR_Action_Vector2 Move;
+        
+        public Valve.VR.SteamVR_Action_Boolean Use;
+        
+        public Valve.VR.SteamVR_Action_Boolean Squeeze;
+        
+        public Valve.VR.SteamVR_Action_Boolean Teleport;
     }
 }

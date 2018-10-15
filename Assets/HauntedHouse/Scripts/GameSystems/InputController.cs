@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using Valve.VR;
 
 public class InputController : MonoBehaviour
 {
@@ -16,4 +16,6 @@ public class InputController : MonoBehaviour
     {
         get { return leftTriggerState; }
     }
+
+
 }

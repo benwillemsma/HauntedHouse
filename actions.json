@@ -1,15 +1,15 @@
 {
   "actions": [
     {
+      "name": "/actions/default/in/GrabPinch",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/GrabGrip",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/in/InteractUI",
-      "type": "boolean"
-    },
-    {
-      "name": "/actions/default/in/Teleport",
-      "type": "boolean"
-    },
-    {
-      "name": "/actions/default/in/Grab",
       "type": "boolean"
     },
     {
@@ -17,9 +17,20 @@
       "type": "pose"
     },
     {
+      "name": "/actions/default/in/Move",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/default/in/Use",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/in/Squeeze",
-      "type": "vector1",
-      "requirement": "optional"
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/Teleport",
+      "type": "boolean"
     },
     {
       "name": "/actions/default/out/Haptic",
@@ -67,7 +78,12 @@
       "/actions/buggybuddy/in/Reset": "Reset",
       "/actions/platformer/in/Move": "Move",
       "/actions/platformer/in/Jump": "Jump",
-      "/actions/default/in/Grab": "Grab"
+      "/actions/default/in/Grab": "Grab",
+      "/actions/default/in/GripPinch": "GripPinch",
+      "/actions/default/in/Grip": "Grip",
+      "/actions/default/in/Move": "Move",
+      "/actions/default/in/Use": "Use",
+      "/actions/default/in/Squeeze": "Squeeze"
     }
   ]
 }
