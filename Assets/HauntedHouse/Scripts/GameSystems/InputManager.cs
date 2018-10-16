@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class InputManager : MonoBehaviour
 {
@@ -10,7 +11,14 @@ public class InputManager : MonoBehaviour
     [Space(10)]
     public SteamVR_Behaviour_Pose rightHand;
     public SteamVR_Behaviour_Pose leftHand;
-    
+
+    private Rigidbody body;
+
+    private void Awake()
+    {
+        body = GetComponent<Rigidbody>();
+    }
+
     public bool IsMoving
     {
         get
@@ -27,8 +35,20 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    public bool IsCrawling
+    {
+        get { return Player.instance.eyeHeight < PlayerData.Instance.crawlThreshold; }
+    }
+
     private void Update()
     {
-        //Debug.Log(IsMoving);
+        if(IsCrawling && body)
+        {
+            if (SteamVR_Input._default.inActions.GrabGrip.GetStateDown(SteamVR_Input_Sources.LeftHand))
+                body.velocity = Vector3.ProjectOnPlane(leftHand.GetVelocity(), Vector3.up);
+
+            if (SteamVR_Input._default.inActions.GrabGrip.GetStateDown(SteamVR_Input_Sources.RightHand))
+                body.velocity = Vector3.ProjectOnPlane(rightHand.GetVelocity(), Vector3.up);
+        }
     }
 }

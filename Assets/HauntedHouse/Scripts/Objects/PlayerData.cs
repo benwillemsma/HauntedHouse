@@ -9,7 +9,9 @@ public class PlayerData : MonoBehaviour
     
     [Range(0, 10)]
     public float moveSpeed = 8;
-    
+    [Range(0, 2)]
+    public float crawlThreshold = 1;
+
     [Range(0, 50)]
     public float CameraSensitivity = 30;
     [Range(0, 2)]
