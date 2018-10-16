@@ -73,9 +73,11 @@ GameObject:
   m_Component:
   - component: {fileID: 447954}
   - component: {fileID: 11465950}
+  - component: {fileID: 114021618834547304}
+  - component: {fileID: 114399246627930630}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1395,7 +1397,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   onTransformChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114399246627930630}
+        m_MethodName: OnPoseMoved
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 114000011273627542}
+          m_ObjectArgumentAssemblyTypeName: Valve.VR.SteamVR_Behaviour_Pose, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onConnectedChanged:
@@ -1429,7 +1442,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   onTransformChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114399246627930630}
+        m_MethodName: OnPoseMoved
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 114000011957598740}
+          m_ObjectArgumentAssemblyTypeName: Valve.VR.SteamVR_Behaviour_Pose, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onConnectedChanged:
@@ -1471,3 +1495,29 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!114 &114021618834547304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0c8d5ad7ff92b42b43f12d2ae9a1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 8
+  CameraSensitivity: 30
+  CameraOffset: 0.75
+  InvertedCamera: 0
+--- !u!114 &114399246627930630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0ec9f0f3caf5a4f9a571446f9d5182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
