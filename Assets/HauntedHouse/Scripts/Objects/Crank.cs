@@ -24,6 +24,9 @@ public class Crank : MonoBehaviour
     [SerializeField]
     private List<Collider> rotationTriggers = new List<Collider>();
 
+    [SerializeField]
+    private bool detach; // for testing
+
     [Header("Audio")]
     [SerializeField]
     AudioClip CrankSound;
@@ -77,6 +80,11 @@ public class Crank : MonoBehaviour
 
     private void Update()
     {
+        if (detach)
+        {
+            detach = false;
+            Attached = false;
+        }
         audioSource.pitch = rb.angularVelocity.magnitude;
         if (prevRotation - transform.localEulerAngles.y > 10)
             audioSource.PlayOneShot(CrankSound);
@@ -120,6 +128,10 @@ public class Crank : MonoBehaviour
                     if (triggerIndex == 1) CheckPattern();
                 }
             }
+        }
+        else if(!Attached && other.transform == attachPoint)
+        {
+            Attached = true;
         }
     }
 }
