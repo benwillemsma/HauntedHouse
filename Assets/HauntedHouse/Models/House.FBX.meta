@@ -1,0 +1,237 @@
+fileFormatVersion: 2
+guid: 0efbb1a5ebbe0a84c8052967a123d975
+timeCreated: 1539726448
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BasementFloor
+    100002: BasementRoom
+    100004: BasementWalls
+    100006: BasementXthings
+    100008: BasmentPanels
+    100010: Bathroom
+    100012: BathroomDoor01
+    100014: BathroomDoor02
+    100016: Box001
+    100018: CrawlSpace
+    100020: CrawlspaceDoor
+    100022: //RootNode
+    100024: Kitchen
+    100026: LivingRoom
+    100028: MainDoors
+    100030: MainFloor
+    100032: MainWalls
+    100034: MainWindows
+    100036: MasterBedroom
+    100038: MasterBedroomDoor
+    100040: StairsUp
+    100042: StraightStair001
+    100044: TopFloor
+    100046: TopWalls
+    100048: TwinBedroom
+    100050: TwinBedroomDoor
+    400000: BasementFloor
+    400002: BasementRoom
+    400004: BasementWalls
+    400006: BasementXthings
+    400008: BasmentPanels
+    400010: Bathroom
+    400012: BathroomDoor01
+    400014: BathroomDoor02
+    400016: Box001
+    400018: CrawlSpace
+    400020: CrawlspaceDoor
+    400022: //RootNode
+    400024: Kitchen
+    400026: LivingRoom
+    400028: MainDoors
+    400030: MainFloor
+    400032: MainWalls
+    400034: MainWindows
+    400036: MasterBedroom
+    400038: MasterBedroomDoor
+    400040: StairsUp
+    400042: StraightStair001
+    400044: TopFloor
+    400046: TopWalls
+    400048: TwinBedroom
+    400050: TwinBedroomDoor
+    2100000: MainWall
+    2100002: LivingRoom
+    2100004: MainFloor
+    2100006: Basement
+    2100008: BasementRoom
+    2100010: BasementCrossthings
+    2100012: BasementBoards
+    2100014: MainDoors
+    2100016: TopFloor
+    2100018: HallFloor3
+    2100020: TwinBedroom
+    2100022: TwinBedroomDoor
+    2100024: MasterBedroomDoor
+    2100026: CrawlspaceDoor
+    2100028: Bathroom
+    2100030: BathRoomDoor
+    2100032: MasterBedroom
+    2100034: CrawlSpace
+    2100036: MainWindows
+    2100038: Kitchen
+    2100040: BasementStairs
+    2100042: StairsUp
+    2100044: BasementFloor
+    2300000: BasementFloor
+    2300002: BasementRoom
+    2300004: BasementWalls
+    2300006: BasementXthings
+    2300008: BasmentPanels
+    2300010: Bathroom
+    2300012: BathroomDoor01
+    2300014: BathroomDoor02
+    2300016: Box001
+    2300018: CrawlSpace
+    2300020: CrawlspaceDoor
+    2300022: Kitchen
+    2300024: LivingRoom
+    2300026: MainDoors
+    2300028: MainFloor
+    2300030: MainWalls
+    2300032: MainWindows
+    2300034: MasterBedroom
+    2300036: MasterBedroomDoor
+    2300038: StairsUp
+    2300040: StraightStair001
+    2300042: TopFloor
+    2300044: TopWalls
+    2300046: TwinBedroom
+    2300048: TwinBedroomDoor
+    3300000: BasementFloor
+    3300002: BasementRoom
+    3300004: BasementWalls
+    3300006: BasementXthings
+    3300008: BasmentPanels
+    3300010: Bathroom
+    3300012: BathroomDoor01
+    3300014: BathroomDoor02
+    3300016: Box001
+    3300018: CrawlSpace
+    3300020: CrawlspaceDoor
+    3300022: Kitchen
+    3300024: LivingRoom
+    3300026: MainDoors
+    3300028: MainFloor
+    3300030: MainWalls
+    3300032: MainWindows
+    3300034: MasterBedroom
+    3300036: MasterBedroomDoor
+    3300038: StairsUp
+    3300040: StraightStair001
+    3300042: TopFloor
+    3300044: TopWalls
+    3300046: TwinBedroom
+    3300048: TwinBedroomDoor
+    4300000: Box001
+    4300002: LivingRoom
+    4300004: MainFloor
+    4300006: BasementWalls
+    4300008: BasementRoom
+    4300010: BasementXthings
+    4300012: BasmentPanels
+    4300014: MainDoors
+    4300016: TopFloor
+    4300018: TopWalls
+    4300020: TwinBedroom
+    4300022: TwinBedroomDoor
+    4300024: MasterBedroomDoor
+    4300026: CrawlspaceDoor
+    4300028: Bathroom
+    4300030: BathroomDoor01
+    4300032: BathroomDoor02
+    4300034: MasterBedroom
+    4300036: CrawlSpace
+    4300038: MainWindows
+    4300040: Kitchen
+    4300042: MainWalls
+    4300044: StraightStair001
+    4300046: StairsUp
+    4300048: BasementFloor
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
