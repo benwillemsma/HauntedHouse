@@ -87,7 +87,10 @@ public class Crank : MonoBehaviour
         }
         audioSource.pitch = rb.angularVelocity.magnitude;
         if (prevRotation - transform.localEulerAngles.y > 10)
+        {
+            prevRotation = transform.localEulerAngles.y;
             audioSource.PlayOneShot(CrankSound);
+        }
     }
 
     private void CheckPattern()

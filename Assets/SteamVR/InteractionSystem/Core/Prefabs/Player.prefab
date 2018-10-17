@@ -883,7 +883,7 @@ MonoBehaviour:
   hoverSphereRadius: 0.075
   hoverLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1024
   hoverUpdateInterval: 0.1
   useControllerHoverComponent: 1
   controllerHoverComponent: tip
@@ -936,7 +936,7 @@ MonoBehaviour:
   hoverSphereRadius: 0.075
   hoverLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1024
   hoverUpdateInterval: 0.1
   useControllerHoverComponent: 1
   controllerHoverComponent: tip
@@ -1397,18 +1397,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   onTransformChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114399246627930630}
-        m_MethodName: OnPoseMoved
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 114000011273627542}
-          m_ObjectArgumentAssemblyTypeName: Valve.VR.SteamVR_Behaviour_Pose, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onConnectedChanged:
@@ -1442,18 +1431,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   onTransformChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114399246627930630}
-        m_MethodName: OnPoseMoved
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 114000011957598740}
-          m_ObjectArgumentAssemblyTypeName: Valve.VR.SteamVR_Behaviour_Pose, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onConnectedChanged:
@@ -1506,9 +1484,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f0c8d5ad7ff92b42b43f12d2ae9a1b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 3
+  moveSensitivity: 1
+  crawlHeight: 0.2
+  crawlThreshold: 1
   CameraSensitivity: 30
-  CameraOffset: 0.75
+  CameraOffset: 0
   InvertedCamera: 0
 --- !u!114 &114399246627930630
 MonoBehaviour:
@@ -1521,3 +1502,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0ec9f0f3caf5a4f9a571446f9d5182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rightHand: {fileID: 114000011957598740}
+  leftHand: {fileID: 114000011273627542}

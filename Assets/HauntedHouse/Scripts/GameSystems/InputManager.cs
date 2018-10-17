@@ -6,8 +6,6 @@ using Valve.VR.InteractionSystem;
 
 public class InputManager : MonoBehaviour
 {
-    public float moveThreshold = 1;
-
     [Space(10)]
     public SteamVR_Behaviour_Pose rightHand;
     public SteamVR_Behaviour_Pose leftHand;
@@ -26,7 +24,8 @@ public class InputManager : MonoBehaviour
             float rightSpeed = rightHand.GetAngularVelocity().x;
             float leftSpeed = leftHand.GetAngularVelocity().x;
 
-            if (Mathf.Abs(rightSpeed) > moveThreshold && Mathf.Abs(leftSpeed) > moveThreshold)
+            float sensitivity = PlayerData.Instance.moveSensitivity;
+            if (Mathf.Abs(rightSpeed) > sensitivity && Mathf.Abs(leftSpeed) > sensitivity)
             {
                 if ((rightSpeed > 0 && leftSpeed < 0) || (rightSpeed < 0 && leftSpeed > 0))
                     return true;
@@ -42,13 +41,35 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        if(IsCrawling && body)
+        if (body)
         {
-            if (SteamVR_Input._default.inActions.GrabGrip.GetStateDown(SteamVR_Input_Sources.LeftHand))
-                body.velocity = Vector3.ProjectOnPlane(leftHand.GetVelocity(), Vector3.up);
+            if (IsCrawling)
+            {
+                if (SteamVR_Input._default.inActions.GrabGrip.GetStateDown(SteamVR_Input_Sources.LeftHand))
+                {
+                    // turn off left controller movement
+                    body.velocity = Vector3.ProjectOnPlane(leftHand.GetVelocity(), Vector3.up);
+                }
+                else
+                {
+                    // turn on left controller movement
+                }
 
-            if (SteamVR_Input._default.inActions.GrabGrip.GetStateDown(SteamVR_Input_Sources.RightHand))
-                body.velocity = Vector3.ProjectOnPlane(rightHand.GetVelocity(), Vector3.up);
+                if (SteamVR_Input._default.inActions.GrabGrip.GetStateDown(SteamVR_Input_Sources.RightHand))
+                {
+                    // turn off right controller movement
+                    body.velocity = Vector3.ProjectOnPlane(rightHand.GetVelocity(), Vector3.up);
+                }
+                else
+                {
+                    // turn on right controller movement
+                }
+            }
+            else if (IsMoving)
+            {
+                Vector3 handForward = Vector3.Cross((leftHand.transform.position - rightHand.transform.position), Vector3.up);
+                body.velocity = Vector3.Lerp(body.velocity, handForward, Time.deltaTime);
+            }
         }
     }
 }
