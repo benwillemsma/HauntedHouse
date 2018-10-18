@@ -5,11 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PoolBall : MonoBehaviour
 {
-    public Transform boundryCenter;
-    public float boundryDistance = 4;
+    public Transform boundaryCenter;
+    public float boundaryDistance = 2;
+    public float boundaryTimer = 4;
+    private float elapsedTime;
 
     private Rigidbody rb;
     private Vector3 startPos;
+
 
 	void Start ()
     {
@@ -19,8 +22,13 @@ public class PoolBall : MonoBehaviour
 
     private void Update()
     {
-        if(boundryCenter && (transform.position - boundryCenter.position).magnitude > boundryDistance)
-            rb.velocity = Vector3.zero + Vector3.up * rb.velocity.y;
+        if (boundaryCenter && (transform.position - boundaryCenter.position).magnitude > boundaryDistance)
+        {
+            elapsedTime += Time.deltaTime;
+            if (elapsedTime > boundaryTimer)
+                ResetBall();
+        }
+        else elapsedTime = 0;
     }
 
     private void OnCollisionEnter(Collision collision)

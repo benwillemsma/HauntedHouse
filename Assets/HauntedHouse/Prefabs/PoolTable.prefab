@@ -2005,8 +2005,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114108021350950822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2018,8 +2019,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114140729808452922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2154,8 +2156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114172416414528290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2250,8 +2253,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114244837891948960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2263,8 +2267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114255413648821720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2363,8 +2368,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114306644725481848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2376,8 +2382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114309938293177660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2503,8 +2510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114381095550750380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2544,8 +2552,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114466789884481744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2607,8 +2616,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114481252102877528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2835,8 +2845,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114648506162392030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2862,8 +2873,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114677310085123090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2898,8 +2910,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114725632187673974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3057,8 +3070,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114766909672569112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3309,7 +3323,6 @@ MonoBehaviour:
   - {fileID: 114108021350950822}
   BallOrder: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f00000010000000
   key: {fileID: 0}
-  orderIndex: 0
 --- !u!114 &114902459430907148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3472,8 +3485,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114967960447826968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3508,8 +3522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51727362ea8bea74fbcd609b62c83264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundryCenter: {fileID: 4212279685505812}
-  boundryDistance: 4
+  boundaryCenter: {fileID: 4212279685505812}
+  boundaryDistance: 2
+  boundaryTimer: 4
 --- !u!114 &114976956334195012
 MonoBehaviour:
   m_ObjectHideFlags: 1
