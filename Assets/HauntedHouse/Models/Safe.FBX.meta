@@ -8,20 +8,35 @@ ModelImporter:
     100000: //RootNode
     100002: SafeDoor_LP
     100004: SafeKnob_LP
+    100006: SafeBox_HP
+    100008: SafeDoor_HP
+    100010: SafeKnob_HP
     400000: //RootNode
     400002: SafeDoor_LP
     400004: SafeKnob_LP
+    400006: SafeBox_HP
+    400008: SafeDoor_HP
+    400010: SafeKnob_HP
     2100000: SafeBox
     2100002: SafeDoor
     2300000: //RootNode
     2300002: SafeDoor_LP
     2300004: SafeKnob_LP
+    2300006: SafeBox_HP
+    2300008: SafeDoor_HP
+    2300010: SafeKnob_HP
     3300000: //RootNode
     3300002: SafeDoor_LP
     3300004: SafeKnob_LP
+    3300006: SafeBox_HP
+    3300008: SafeDoor_HP
+    3300010: SafeKnob_HP
     4300000: SafeBox_LP
     4300002: SafeDoor_LP
     4300004: SafeKnob_LP
+    4300006: SafeDoor_HP
+    4300008: SafeKnob_HP
+    4300010: SafeBox_HP
   externalObjects: {}
   materials:
     importMaterials: 1
