@@ -1,26 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(AudioSource))]
-public class Crank : MonoBehaviour
+public class RadialCombination : MonoBehaviour
 {
-    private enum CrankDirection
+    public enum RotationDirection
     {
         ClockWise = 1,
         CounterCW = -1,
     }
 
-    [Header("Crank")]
+    private enum Axis
+    {
+        x, y, z
+    }
+
     [SerializeField]
-    private JackInBox jackInBox;
+    private UnityEvent openEvent;
     [SerializeField]
     private Transform attachPoint;
+    [SerializeField]
+    private Axis axis;
 
     [Space(10)]
     [SerializeField, Range(-5, 5)]
-    private int[] CrankPattern;
+    private int[] Pattern;
     [SerializeField]
     private List<Collider> rotationTriggers = new List<Collider>();
 
@@ -29,18 +36,19 @@ public class Crank : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField]
-    AudioClip CrankSound;
+    private AudioClip RotationSound;
     [SerializeField]
-    AudioClip MusicBox;
+    private float soundStep = 10;
 
     private Rigidbody rb;
     private AudioSource audioSource;
-    private CrankDirection patternDir;
-    private CrankDirection rotateDir;
-    
-    private int patternIndex = 0;
-    private int triggerIndex = 1;
-    private int rotations = 0;
+    public RotationDirection patternDir;
+    private RotationDirection rotateDir;
+
+    public int patternIndex = 0;
+    public int triggerIndex = 1;
+    public int rotations = 0;
+    public int checkpoint = 1;
 
     private float prevRotation;
 
@@ -56,16 +64,11 @@ public class Crank : MonoBehaviour
                 transform.parent = attachPoint;
                 transform.localPosition = Vector3.zero;
                 transform.localRotation = Quaternion.identity;
-
-                audioSource.pitch = 0;
-                audioSource.clip = MusicBox;
-                audioSource.Play();
             }
             else
             {
                 rb.isKinematic = false;
                 transform.parent = null;
-                audioSource.Stop();
             }
         }
     }
@@ -75,7 +78,7 @@ public class Crank : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
 
-        patternDir = (CrankPattern[patternIndex] > 0) ? CrankDirection.ClockWise : CrankDirection.CounterCW;
+        patternDir = (Pattern[patternIndex] > 0) ? RotationDirection.ClockWise : RotationDirection.CounterCW;
     }
 
     private void Update()
@@ -85,56 +88,75 @@ public class Crank : MonoBehaviour
             detach = false;
             Attached = false;
         }
-        audioSource.pitch = rb.angularVelocity.magnitude;
-        if (prevRotation - transform.localEulerAngles.y > 10)
+        float axisRot = GetAxisRotation();
+        if (prevRotation - axisRot > soundStep)
         {
-            prevRotation = transform.localEulerAngles.y;
-            audioSource.PlayOneShot(CrankSound);
+            prevRotation = axisRot;
+            audioSource.PlayOneShot(RotationSound);
         }
+    }
+
+    private float GetAxisRotation()
+    {
+        switch (axis)
+        {
+            case Axis.x:
+                return transform.localEulerAngles.x;
+            case Axis.y:
+                return transform.localEulerAngles.y;
+            case Axis.z:
+                return transform.localEulerAngles.z;
+        }
+        return 0;
     }
 
     private void CheckPattern()
     {
-        if (rotations / 4 == CrankPattern[patternIndex])
+        if (rotations / 4 == Pattern[patternIndex])
         {
             patternIndex++;
-            if (patternIndex == CrankPattern.Length)
+            if (patternIndex == Pattern.Length)
             {
-                jackInBox.Open();
+                openEvent.Invoke();
                 return;
             }
-            patternDir = (CrankDirection)((int)patternDir * -1);
+            patternDir = (RotationDirection)((int)patternDir * -1);
         }
         else if (rotateDir != patternDir)
         {
             rotations = 0;
             patternIndex = 0;
-            patternDir = (CrankDirection)((int)patternDir * -1);
+            patternDir = (RotationDirection)((int)patternDir * -1);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (Attached && patternIndex < CrankPattern.Length)
+        if (Attached && patternIndex < Pattern.Length)
         {
             if (rotationTriggers.Contains(other))
             {
                 int otherIndex = (triggerIndex < rotationTriggers.Count / 2 && triggerIndex >= 0) ? rotationTriggers.IndexOf(other) : rotationTriggers.LastIndexOf(other);
                 if (otherIndex != triggerIndex)
                 {
-                    rotateDir = (otherIndex - triggerIndex > 0) ? CrankDirection.ClockWise : CrankDirection.CounterCW;
-                    rotations += (int)rotateDir;
+                    rotateDir = (otherIndex - triggerIndex > 0) ? RotationDirection.ClockWise : RotationDirection.CounterCW;
+                    if(patternIndex > 0 || (patternIndex == 0 && (rotateDir == patternDir || rotations != 0)))
+                        rotations += (int)rotateDir;
+                    else
+                    {
+                        checkpoint--;
+                        if (checkpoint < 1)
+                            checkpoint += rotationTriggers.Count - 2;
+                    }
 
                     triggerIndex += (int)rotateDir;
                     if (triggerIndex > rotationTriggers.Count - 2) triggerIndex = 1;
                     if (triggerIndex < 1) triggerIndex += rotationTriggers.Count - 2;
-                    if (triggerIndex == 1) CheckPattern();
+                    if (triggerIndex == checkpoint && rotations != 0) CheckPattern();
                 }
             }
         }
         else if(!Attached && other.transform == attachPoint)
-        {
             Attached = true;
-        }
     }
 }

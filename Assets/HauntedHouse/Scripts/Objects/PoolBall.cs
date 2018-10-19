@@ -13,7 +13,6 @@ public class PoolBall : MonoBehaviour
     private Rigidbody rb;
     private Vector3 startPos;
 
-
 	void Start ()
     {
         startPos = transform.position;
@@ -34,14 +33,16 @@ public class PoolBall : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Rigidbody other = collision.gameObject.GetComponent<Rigidbody>();
+
+        Vector3 normal = collision.contacts[0].normal;
+        float force = Vector3.Project(rb.velocity, normal).magnitude;
         if (other)
         {
-            Vector3 normal = collision.contacts[0].normal;
-            float force = Vector3.Project(rb.velocity, normal).magnitude * 0.8f;
+            force *= 0.8f;
             other.AddForce(normal * -force, ForceMode.Impulse);
-            other.AddForce(normal * force, ForceMode.Impulse);
+            rb.AddForce(normal * force, ForceMode.Impulse);
         }
-        else rb.velocity = Vector3.Reflect(rb.velocity, collision.contacts[0].normal);
+        else rb.AddForce(normal * force * 1.8f, ForceMode.Impulse);
     }
 
     public void ResetBall()
