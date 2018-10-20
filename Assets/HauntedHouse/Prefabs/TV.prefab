@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 23948794527179492}
   - component: {fileID: 65485031896550852}
   - component: {fileID: 114430934407137328}
+  - component: {fileID: 95740547273866100}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -335,6 +336,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.5, y: 8.7, z: 6.42}
   m_Center: {x: 0, y: 4.494504, z: -0.000000119209275}
+--- !u!95 &95740547273866100
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691426928307304}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c92a776cf11a9ab42899b9e02b2720a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!108 &108027389630692792
 Light:
   m_ObjectHideFlags: 1
@@ -350,7 +368,7 @@ Light:
   m_SpotAngle: 151.6
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

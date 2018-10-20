@@ -155,28 +155,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 876b79092a3ccb640a11d426ea34350b, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &453703141 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1691426928307304, guid: 876b79092a3ccb640a11d426ea34350b,
-    type: 2}
-  m_PrefabInternal: {fileID: 453703140}
---- !u!95 &453703142
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 453703141}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c92a776cf11a9ab42899b9e02b2720a7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &970206429
 Prefab:
   m_ObjectHideFlags: 0
@@ -215,10 +193,6 @@ Prefab:
     - target: {fileID: 4266868778880554, guid: f76940215d70c5e47bdb2e8e0197a368, type: 2}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1218846698026220, guid: f76940215d70c5e47bdb2e8e0197a368, type: 2}
-      propertyPath: m_Name
-      value: Flashlight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76940215d70c5e47bdb2e8e0197a368, type: 2}
