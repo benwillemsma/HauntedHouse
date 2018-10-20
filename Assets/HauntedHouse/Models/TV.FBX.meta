@@ -8,20 +8,29 @@ ModelImporter:
     100000: //RootNode
     100002: TVknob2_LP
     100004: TVknob_LP
+    100006: TV_LP
+    100008: TV_Screen_LP
     400000: //RootNode
     400002: TVknob2_LP
     400004: TVknob_LP
+    400006: TV_LP
+    400008: TV_Screen_LP
     2100000: PoolTable
     2100002: TVscreen
     2300000: //RootNode
     2300002: TVknob2_LP
     2300004: TVknob_LP
+    2300006: TV_LP
+    2300008: TV_Screen_LP
     3300000: //RootNode
     3300002: TVknob2_LP
     3300004: TVknob_LP
+    3300006: TV_LP
+    3300008: TV_Screen_LP
     4300000: TV_LP
     4300002: TVknob_LP
     4300004: TVknob2_LP
+    4300006: TV_Screen_LP
   externalObjects: {}
   materials:
     importMaterials: 1
