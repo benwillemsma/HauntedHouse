@@ -21,57 +21,36 @@ public class RadialCombination : MonoBehaviour
     [SerializeField]
     private UnityEvent openEvent;
     [SerializeField]
-    private Transform attachPoint;
-    [SerializeField]
     private Axis axis;
 
     [Space(10)]
-    [SerializeField, Range(-5, 5)]
+    [SerializeField]
     private int[] Pattern;
     [SerializeField]
     private List<Collider> rotationTriggers = new List<Collider>();
-
     [SerializeField]
-    private bool detach; // for testing
+    private int triggerAmount = 1;
+    [SerializeField]
+    private bool fullRotations = false;
 
     [Header("Audio")]
     [SerializeField]
     private AudioClip RotationSound;
     [SerializeField]
+    private AudioClip ClickSound;
+    [SerializeField]
     private float soundStep = 10;
 
-    private Rigidbody rb;
-    private AudioSource audioSource;
+    protected Rigidbody rb;
+    protected AudioSource audioSource;
     public RotationDirection patternDir;
     private RotationDirection rotateDir;
 
     public int patternIndex = 0;
     public int triggerIndex = 1;
-    public int rotations = 0;
-    public int checkpoint = 1;
+    public float rotations = 0;
 
     private float prevRotation;
-
-    public bool Attached
-    {
-        get { return transform.parent == attachPoint; }
-        set
-        {
-            if (value)
-            {
-                rb.isKinematic = true;
-
-                transform.parent = attachPoint;
-                transform.localPosition = Vector3.zero;
-                transform.localRotation = Quaternion.identity;
-            }
-            else
-            {
-                rb.isKinematic = false;
-                transform.parent = null;
-            }
-        }
-    }
 
     private void Awake()
     {
@@ -81,18 +60,13 @@ public class RadialCombination : MonoBehaviour
         patternDir = (Pattern[patternIndex] > 0) ? RotationDirection.ClockWise : RotationDirection.CounterCW;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
-        if (detach)
-        {
-            detach = false;
-            Attached = false;
-        }
         float axisRot = GetAxisRotation();
         if (prevRotation - axisRot > soundStep)
         {
             prevRotation = axisRot;
-            audioSource.PlayOneShot(RotationSound);
+            if (RotationSound) audioSource.PlayOneShot(RotationSound);
         }
     }
 
@@ -110,11 +84,40 @@ public class RadialCombination : MonoBehaviour
         return 0;
     }
 
-    private void CheckPattern()
+    protected virtual void OnTriggerEnter(Collider other)
     {
-        if (rotations / 4 == Pattern[patternIndex])
+        if (patternIndex < Pattern.Length)
+        {
+            if (rotationTriggers.Contains(other))
+            {
+                int otherIndex = (triggerIndex < rotationTriggers.Count / 2 && triggerIndex >= 0) ? rotationTriggers.IndexOf(other) : rotationTriggers.LastIndexOf(other);
+                if (otherIndex != triggerIndex)
+                {
+                    rotateDir = (otherIndex - triggerIndex > 0) ? RotationDirection.ClockWise : RotationDirection.CounterCW;
+
+                    triggerIndex += (int)rotateDir;
+                    if (triggerIndex > rotationTriggers.Count - 2) triggerIndex = 1;
+                    if (triggerIndex < 1) triggerIndex += rotationTriggers.Count - 2;
+
+                    if (fullRotations)
+                    {
+                        if ((patternIndex > 0 || (patternIndex == 0 && (rotateDir == patternDir || rotations != 0))))
+                            rotations += (int)rotateDir;
+                        if (rotations != 0) CheckCombination();
+                    }
+                    else CheckCombination();
+                }
+            }
+        }
+    }
+
+    private void CheckCombination()
+    {
+        bool increasePattern = fullRotations ? rotations / triggerAmount == Pattern[patternIndex] : triggerIndex == Pattern[patternIndex];
+        if (increasePattern)
         {
             patternIndex++;
+            if (ClickSound) audioSource.PlayOneShot(ClickSound);
             if (patternIndex == Pattern.Length)
             {
                 openEvent.Invoke();
@@ -124,39 +127,9 @@ public class RadialCombination : MonoBehaviour
         }
         else if (rotateDir != patternDir)
         {
-            rotations = 0;
+            if (!fullRotations) rotations = 0;
             patternIndex = 0;
-            patternDir = (RotationDirection)((int)patternDir * -1);
+            patternDir = (Pattern[patternIndex] > 0) ? RotationDirection.ClockWise : RotationDirection.CounterCW;
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (Attached && patternIndex < Pattern.Length)
-        {
-            if (rotationTriggers.Contains(other))
-            {
-                int otherIndex = (triggerIndex < rotationTriggers.Count / 2 && triggerIndex >= 0) ? rotationTriggers.IndexOf(other) : rotationTriggers.LastIndexOf(other);
-                if (otherIndex != triggerIndex)
-                {
-                    rotateDir = (otherIndex - triggerIndex > 0) ? RotationDirection.ClockWise : RotationDirection.CounterCW;
-                    if(patternIndex > 0 || (patternIndex == 0 && (rotateDir == patternDir || rotations != 0)))
-                        rotations += (int)rotateDir;
-                    else
-                    {
-                        checkpoint--;
-                        if (checkpoint < 1)
-                            checkpoint += rotationTriggers.Count - 2;
-                    }
-
-                    triggerIndex += (int)rotateDir;
-                    if (triggerIndex > rotationTriggers.Count - 2) triggerIndex = 1;
-                    if (triggerIndex < 1) triggerIndex += rotationTriggers.Count - 2;
-                    if (triggerIndex == checkpoint && rotations != 0) CheckPattern();
-                }
-            }
-        }
-        else if(!Attached && other.transform == attachPoint)
-            Attached = true;
     }
 }

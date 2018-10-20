@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 135979093905870504}
   - component: {fileID: 114327658980747060}
   - component: {fileID: 114945203840958970}
-  - component: {fileID: 114504971010008470}
+  - component: {fileID: 114674894667446608}
   - component: {fileID: 82023581111159944}
   m_Layer: 9
   m_Name: Crank
@@ -559,7 +559,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -803,7 +803,7 @@ MonoBehaviour:
   handFollowTransformRotation: 1
   highlightOnHover: 1
   hideHighlight: []
---- !u!114 &114504971010008470
+--- !u!114 &114674894667446608
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1066835851461756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c4dce7a136e8c541ab4497a3afe00b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d75adb1272458547b69a13353623edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   openEvent:
@@ -830,7 +830,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  attachPoint: {fileID: 4686472575595538}
   axis: 1
   Pattern: 020000000100000004000000
   rotationTriggers:
@@ -840,14 +839,17 @@ MonoBehaviour:
   - {fileID: 135071812916625840}
   - {fileID: 135725061386564476}
   - {fileID: 135349953964316060}
-  detach: 0
+  triggerAmount: 4
+  fullRotations: 1
   RotationSound: {fileID: 0}
+  ClickSound: {fileID: 0}
   soundStep: 10
   patternDir: 0
   patternIndex: 0
   triggerIndex: 1
   rotations: 0
-  checkpoint: 1
+  attachPoint: {fileID: 4686472575595538}
+  detach: 0
 --- !u!114 &114765699521124738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -871,9 +873,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axisOfRotation: 1
-  childCollider: {fileID: 0}
+  childCollider: {fileID: 64988866046116368}
   linearMapping: {fileID: 0}
-  hoverLock: 0
+  hoverLock: 1
   limited: 0
   frozenDistanceMinMaxThreshold: {x: 0.1, y: 0.2}
   onFrozenDistanceThreshold:

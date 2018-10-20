@@ -1146,7 +1146,7 @@ MonoBehaviour:
   hoverSphereRadius: 0.05
   hoverLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1024
   hoverUpdateInterval: 0.1
   useControllerHoverComponent: 1
   controllerHoverComponent: tip
@@ -1489,7 +1489,6 @@ MonoBehaviour:
   crawlHeight: 0.2
   crawlThreshold: 1
   CameraSensitivity: 30
-  CameraOffset: 0
   InvertedCamera: 0
 --- !u!114 &114399246627930630
 MonoBehaviour:
@@ -1504,3 +1503,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightHand: {fileID: 114000011957598740}
   leftHand: {fileID: 114000011273627542}
+  noSteamVRHand: {fileID: 11497470}
