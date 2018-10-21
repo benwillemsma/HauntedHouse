@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
+[RequireComponent(typeof(Animator))]
 public class TV : MonoBehaviour
 {
     [SerializeField, Range(0, 50)]
@@ -15,14 +16,11 @@ public class TV : MonoBehaviour
     private CircularDrive[] dials;
 
     private float[] dialGoals;
-    private Material mat;
+    private Animator anim;
 
     private void Awake()
     {
-        mat = GetComponent<Renderer>().materials[1];
-        mat.color = Color.red;
-
-
+        anim = GetComponent<Animator>();
         dialGoals = new float[dials.Length];
         SetGoals();
     }
@@ -38,9 +36,10 @@ public class TV : MonoBehaviour
         bool withinRange = true;
         for (int i = 0; i < dials.Length; i++)
         {
-            if (Mathf.Abs(dials[i].outAngle - dialGoals[i]) > goalRange)
+            float delta = Mathf.Abs(dials[i].outAngle - dialGoals[i]);
+            if (delta > goalRange)
                 withinRange = false;
-            else Debug.Log(dials[i].gameObject + ": is Within Goal Range");
+            anim.SetFloat("Dial" + i, goalRange - delta);
         }
         if (withinRange) RewardKey();
     }
