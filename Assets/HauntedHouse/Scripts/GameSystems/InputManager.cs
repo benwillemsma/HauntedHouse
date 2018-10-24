@@ -27,11 +27,11 @@ public class InputManager : MonoBehaviour
     private void Update()
     {
         if (noSteamVRHand && noSteamVRHand.enabled == false) noSteamVRHand.enabled = true;
-        if (body)
+        if (body) 
         {
             Vector2 moveDir = SteamVR_Input.__actions_default_in_Move.GetAxis(SteamVR_Input_Sources.Any);
             if (moveDir.magnitude > 0)
-                body.velocity = new Vector3(moveDir.x, body.velocity.y, moveDir.y);
+                body.velocity = new Vector3(moveDir.x, body.velocity.y, moveDir.y).normalized * PlayerData.Instance.moveSpeed;
 
             if (IsCrawling)
                 body.velocity *= 0.5f;
