@@ -2,12 +2,12 @@
   "source": "Unity",
   "applications": [
     {
-      "app_key": "application.generated.unity.hauntedhouse.exe",
+      "app_key": "application.generated.unity.vrtest.exe",
       "launch_type": "url",
       "url": "steam://launch/",
       "strings": {
         "en_us": {
-          "name": "Haunted House [Testing]"
+          "name": "Vr Test [Testing]"
         }
       }
     }

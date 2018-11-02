@@ -4,14 +4,10 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
+[RequireComponent(typeof(Rigidbody))]
 public class InputManager : MonoBehaviour
 {
-    [Space(10)]
-    public SteamVR_Behaviour_Pose rightHand;
-    public SteamVR_Behaviour_Pose leftHand;
-
-    public Hand noSteamVRHand;
-
+    public Transform head;
     private Rigidbody body;
 
     private void Awake()
@@ -19,22 +15,13 @@ public class InputManager : MonoBehaviour
         body = GetComponent<Rigidbody>();
     }
 
-    public bool IsCrawling
-    {
-        get { return Player.instance.eyeHeight < PlayerData.Instance.crawlThreshold; }
-    }
-
     private void Update()
     {
-        if (noSteamVRHand && noSteamVRHand.enabled == false) noSteamVRHand.enabled = true;
-        if (body) 
+        if (body && head)
         {
-            Vector2 moveDir = Vector3.zero;//SteamVR_Input.de(SteamVR_Input_Sources.Any);
-            if (moveDir.magnitude > 0)
-                body.velocity = new Vector3(moveDir.x, body.velocity.y, moveDir.y).normalized * PlayerData.Instance.moveSpeed;
-
-            if (IsCrawling)
-                body.velocity *= 0.5f;
+            Vector3 moveDir = SteamVR_Input.__actions_default_in_Move.GetAxis(SteamVR_Input_Sources.Any);
+            moveDir = Quaternion.AngleAxis(head.eulerAngles.y, Vector3.up) * new Vector3(moveDir.x, 0, moveDir.y);
+            body.velocity = moveDir + Vector3.up * body.velocity.y;
         }
     }
 }
