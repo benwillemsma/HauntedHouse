@@ -6,10 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    #region Components
     public static GameManager Instance;
-    public static AudioDictonary AudioManager;
-    #endregion
 
     #region GameState
     private static bool m_gameOver = false;
@@ -207,15 +204,11 @@ public class GameManager : MonoBehaviour
     #region Main
     private void Awake()
     {
-        if (!Instance)
-        {
-            Instance = this;
-            DontDestroyOnLoad(this);
-        }
+        if (!Instance) Instance = this;
         else
         {
             StopAllCoroutines();
-            DestroyImmediate(gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -230,15 +223,14 @@ public class GameManager : MonoBehaviour
             else TogglePause(true);
         }
 
+#if UNITY_EDITOR
         // For Testing
-        if (Application.isEditor)
-        {
-            if (Input.GetKeyDown(KeyCode.KeypadPlus))
-                Time.timeScale++;
-            if (Input.GetKeyDown(KeyCode.KeypadMinus))
-                Time.timeScale--;
-            Mathf.Clamp(Time.timeScale, 0, 10);
-        }
+        if (Input.GetKeyDown(KeyCode.KeypadPlus))
+            Time.timeScale++;
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+            Time.timeScale--;
+        Time.timeScale = Mathf.Clamp(Time.timeScale, 0, 10);
+#endif
     }
     #endregion
 }

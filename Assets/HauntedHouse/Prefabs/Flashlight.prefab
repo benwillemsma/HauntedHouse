@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4519517359868406}
   - component: {fileID: 108381027380050048}
   - component: {fileID: 95709169529417754}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114904356884842778}
   - component: {fileID: 54120903583105154}
   - component: {fileID: 136008753427984382}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

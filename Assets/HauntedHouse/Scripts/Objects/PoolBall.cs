@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AudioSource))]
 public class PoolBall : MonoBehaviour
 {
-    public Transform boundaryCenter;
-    public float boundaryDistance = 2;
-    public float boundaryTimer = 4;
+    [SerializeField]
+    private Transform boundaryCenter;
+    [SerializeField]
+    private float boundaryDistance = 2;
+    [SerializeField]
+    private float boundaryTimer = 4;
     private float elapsedTime;
+
+    [Header("Audio")]
+    [SerializeField]
+    private AudioClip ballCollision;
+    [SerializeField]
+    private AudioClip sideCollision;
+    private AudioSource audioS;
 
     private Rigidbody rb;
     private Vector3 startPos;
@@ -17,7 +28,8 @@ public class PoolBall : MonoBehaviour
     {
         startPos = transform.position;
         rb = GetComponent<Rigidbody>();
-	}
+        audioS = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -36,13 +48,18 @@ public class PoolBall : MonoBehaviour
 
         Vector3 normal = collision.contacts[0].normal;
         float force = Vector3.Project(rb.velocity, normal).magnitude;
-        if (other)
+        if (other && other.CompareTag("PoolBall"))
         {
             force *= 0.8f;
             other.AddForce(normal * -force, ForceMode.Impulse);
             rb.AddForce(normal * force, ForceMode.Impulse);
+            audioS.PlayOneShot(ballCollision);
         }
-        else rb.AddForce(normal * force * 1.8f, ForceMode.Impulse);
+        else if (collision.collider.gameObject.CompareTag("PoolTable"))
+        {
+            rb.AddForce(normal * force * 1.8f, ForceMode.Impulse);
+            audioS.PlayOneShot(sideCollision);
+        }
     }
 
     public void ResetBall()

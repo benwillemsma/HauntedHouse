@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioDictonary : MonoBehaviour
 {
+    public static AudioDictonary Instance;
+
     private AudioSource levelSource;
     public AudioSource LevelSource
     {
@@ -15,10 +16,9 @@ public class AudioDictonary : MonoBehaviour
 
     void Start()
     {
-        if (GameManager.Instance)
+        if (!Instance)
         {
-            GameManager.AudioManager = this;
-
+            Instance = this;
             levelSource = GetComponent<AudioSource>();
             levelSource.spatialBlend = 0;
         }
@@ -49,8 +49,8 @@ public class AudioDictonary : MonoBehaviour
     {
         while (a.volume > 0)
         {
-            a.volume -= Time.deltaTime / 2;
-            b.volume += Time.deltaTime / 2;
+            a.volume -= Time.deltaTime / blendTime;
+            b.volume += Time.deltaTime / blendTime;
             yield return null;
         }
         a.Stop();

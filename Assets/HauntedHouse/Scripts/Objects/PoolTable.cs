@@ -25,8 +25,11 @@ public class PoolTable : MonoBehaviour
             }
             else
             {
-                for (int i = 0; i < balls.Count; i++)
-                    balls[i].ResetBall();
+                Rigidbody body = ball.GetComponent<Rigidbody>();
+                body.velocity = Vector3.zero;
+                Vector3 dir = ball.transform.parent.position - ball.transform.position;
+                dir.y = 0;
+                body.AddForce((Vector3.up * 2 + dir), ForceMode.Impulse);
             }
         }
     }

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OutOfSightThrower : ItemThrower
+public class OutOfSightThrower : ItemSpawner
 {
+    [Header("Throw Settings")]
+    public Vector2 throwForce = new Vector2(1, 1);
     public Transform[] targets;
 
     protected override void SpawnItem(GameObject triggerObject)
@@ -23,7 +25,6 @@ public class OutOfSightThrower : ItemThrower
             for (int i = 0; i < targets.Length; i++)
             {
                 float angle = Mathf.Abs(Vector3.SignedAngle(targets[i].forward, spawnPoint.position - targets[i].transform.position, Vector3.up));
-                Debug.Log(angle);
                 if (angle < 80)
                 {
                     selectedTarget = targets[i];

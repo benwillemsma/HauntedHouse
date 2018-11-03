@@ -46,9 +46,9 @@ public class RadialCombination : MonoBehaviour
     public RotationDirection patternDir;
     private RotationDirection rotateDir;
 
-    public int patternIndex = 0;
-    public int triggerIndex = 1;
-    public float rotations = 0;
+    private int patternIndex = 0;
+    private int triggerIndex = 1;
+    private float rotations = 0;
 
     private float prevRotation;
 

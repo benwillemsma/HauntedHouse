@@ -15,7 +15,7 @@ public class Actor : MonoBehaviour
 
     public void PlayAudio(AudioClip clip)
     {
-        GameManager.AudioManager.playAudio(m_audioSource, clip);
+        AudioDictonary.Instance.playAudio(m_audioSource, clip);
     }
     #endregion
 
