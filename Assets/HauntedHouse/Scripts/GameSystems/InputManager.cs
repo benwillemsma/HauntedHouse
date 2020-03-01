@@ -20,8 +20,10 @@ public class InputManager : MonoBehaviour
         if (body && head)
         {
             Vector3 moveDir = SteamVR_Input.__actions_default_in_Move.GetAxis(SteamVR_Input_Sources.Any);
+            Debug.Log("moveDirection:" + moveDir);
             moveDir = Quaternion.AngleAxis(head.eulerAngles.y, Vector3.up) * new Vector3(moveDir.x, 0, moveDir.y);
             body.velocity = (moveDir * PlayerData.Instance.moveSpeed) + (Vector3.up * body.velocity.y);
+            Debug.Log("Velocity:" + moveDir);
         }
     }
 }

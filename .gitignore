@@ -34,3 +34,17 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/HauntedHouse/Scenes/House/LightingData.asset
+Assets/HauntedHouse/Scenes/House/LightingData.asset.meta
+Assets/HauntedHouse/Scenes/House/Lightmap-0_comp_dir.png
+Assets/HauntedHouse/Scenes/House/Lightmap-0_comp_dir.png.meta
+Assets/HauntedHouse/Scenes/House/Lightmap-0_comp_light.exr
+Assets/HauntedHouse/Scenes/House/Lightmap-0_comp_light.exr.meta
+Assets/HauntedHouse/Scenes/House/Lightmap-0_comp_shadowmask.png
+Assets/HauntedHouse/Scenes/House/Lightmap-0_comp_shadowmask.png.meta
+Assets/HauntedHouse/Scenes/House/Lightmap-1_comp_dir.png
+Assets/HauntedHouse/Scenes/House/Lightmap-1_comp_dir.png.meta
+Assets/HauntedHouse/Scenes/House/Lightmap-1_comp_light.exr
+Assets/HauntedHouse/Scenes/House/Lightmap-1_comp_light.exr.meta
+Assets/HauntedHouse/Scenes/House/Lightmap-1_comp_shadowmask.png
+Assets/HauntedHouse/Scenes/House/Lightmap-9_comp_shadowmask.png.meta
